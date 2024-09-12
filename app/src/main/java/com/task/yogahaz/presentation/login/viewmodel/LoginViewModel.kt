@@ -1,14 +1,14 @@
 package com.task.yogahaz.presentation.login.viewmodel
 
-import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.task.yogahaz.data.dto.login.request.LoginBody
 import com.task.yogahaz.domain.usecases.login.LoginUseCase
 import com.task.yogahaz.presentation.login.state.LoginState
-import com.task.yogahaz.utils.CONSTANTS
-import com.task.yogahaz.utils.Result
-import com.task.yogahaz.utils.ValidationExceptions
+import com.task.yogahaz.utils.constants.CONSTANTS
+import com.task.yogahaz.utils.network.Result
+import com.task.yogahaz.utils.Utils
+import com.task.yogahaz.utils.validation.ValidationExceptions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -57,8 +57,8 @@ class LoginViewModel @Inject constructor(
     private fun validateInputs(body: LoginBody) {
             when {
                 body.email.isBlank() -> throw ValidationExceptions.EmailValidationException.EmptyEmailException()
-                !Patterns.EMAIL_ADDRESS.matcher(body.email)
-                    .matches() -> throw ValidationExceptions.EmailValidationException.InvalidEmailFormatException()
+                !Utils.isValidEmail(body.email)
+                     -> throw ValidationExceptions.EmailValidationException.InvalidEmailFormatException()
 
                 body.password.isBlank() -> throw ValidationExceptions.PasswordValidationException.EmptyPasswordException()
                 body.password.length < CONSTANTS.MIN_PASSWORD_LENGTH -> throw ValidationExceptions.PasswordValidationException.ShortPasswordException()

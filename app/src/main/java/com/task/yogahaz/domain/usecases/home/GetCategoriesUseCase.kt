@@ -3,7 +3,7 @@ package com.task.yogahaz.domain.usecases.home
 
 import com.task.yogahaz.domain.models.home.CategoriesResponse
 import com.task.yogahaz.domain.repository.home.HomeRepository
-import com.task.yogahaz.utils.Result
+import com.task.yogahaz.utils.network.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

@@ -1,13 +1,11 @@
-package com.task.yogahaz.base
+package com.task.yogahaz.utils.base
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
@@ -34,34 +32,25 @@ abstract class BaseFragment<VDB : ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        handleBars()
-        initToolBar()
+//        handleBars()
         onCreateInit()
-        initSetAdapter()
-        initViewModel()
         initClicks()
     }
 
     //adding abstract fun for clicking events
     protected abstract fun initClicks()
-    // adding abstract fun for viewmodel
-    protected abstract fun initViewModel()
     //adding abstract fun for init at fragment creation
     protected abstract fun onCreateInit()
-    //adding abstract fun for setting adapter
-    protected abstract fun initSetAdapter()
-    // adding abstract fun for setting toolbar
-    protected abstract fun initToolBar()
+
 
     // checking current destination and return true if the current destination is the same as parameter so i can navigate after
     fun checkCurrentDestination(currentFragment: Int): Boolean {
         return findNavController().currentDestination?.id == currentFragment
     }
 
-    // showing snackBar for error messages
-    fun showSnackBar(message: String?) {
-        snackBar = Snackbar.make(_binding!!.root, message!!, Snackbar.LENGTH_LONG)
-        snackBar?.show()
+    // showing toast for error messages
+    fun showToast(message: String?) {
+        Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
     }
     //dismissing snackBars
     override fun onPause() {
@@ -71,21 +60,35 @@ abstract class BaseFragment<VDB : ViewBinding> : Fragment() {
         }
     }
 
-    //showing  status bar and navigation bar
-    private fun handleBars() {
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-
-        val window = requireActivity().window
-        val decorView = window.decorView
-
-        WindowInsetsControllerCompat(window, decorView).apply {
-            // Show the status bar
-            show(WindowInsetsCompat.Type.statusBars())
-            // Show the navigation bar
-            show(WindowInsetsCompat.Type.navigationBars())
-        }
-    }
-
+//    //showing  status bar and navigation bar
+//    private fun handleBars() {
+//        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+//
+//        val window = requireActivity().window
+//        val decorView = window.decorView
+//
+//        WindowInsetsControllerCompat(window, decorView).apply {
+//            // Show the status bar
+//            show(WindowInsetsCompat.Type.statusBars())
+//            // Show the navigation bar
+//            show(WindowInsetsCompat.Type.navigationBars())
+//        }
+//    }
+//    protected fun handleStatusBars(showStatusBar: Boolean = true) {
+//        val window = requireActivity().window
+//        val decorView = window.decorView
+//
+//        WindowInsetsControllerCompat(window, decorView).apply {
+//            if (showStatusBar) {
+//                show(WindowInsetsCompat.Type.statusBars())
+//            } else {
+//                hide(WindowInsetsCompat.Type.statusBars())
+//            }
+//
+//            show(WindowInsetsCompat.Type.navigationBars())
+//
+//        }
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

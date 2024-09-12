@@ -1,15 +1,14 @@
 package com.task.yogahaz.presentation.register.viewmodel
 
 import android.util.Log
-import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.task.yogahaz.data.dto.register.request.RegisterBody
 import com.task.yogahaz.domain.usecases.register.RegisterUseCase
 import com.task.yogahaz.presentation.register.state.RegisterState
-import com.task.yogahaz.utils.CONSTANTS
-import com.task.yogahaz.utils.Result
-import com.task.yogahaz.utils.ValidationExceptions
+import com.task.yogahaz.utils.network.Result
+import com.task.yogahaz.utils.Utils
+import com.task.yogahaz.utils.validation.ValidationExceptions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,7 +24,7 @@ class RegisterViewModel @Inject constructor(
     private val _state = MutableStateFlow(RegisterState())
     val state: StateFlow<RegisterState> = _state
 
-    fun register(
+    fun register(   // validate first for the inputs then call the api
         name: String,
         email: String,
         phone: String,
@@ -44,7 +43,7 @@ class RegisterViewModel @Inject constructor(
         }
     }
 
-    private fun performRegister(registerBody: RegisterBody) {
+    private fun performRegister(registerBody: RegisterBody) {   // calling api with setting cases of results
         getRegisterUseCase(registerBody).onEach { result ->
             when (result) {
                 is Result.Success -> {
@@ -73,18 +72,18 @@ class RegisterViewModel @Inject constructor(
     ) {
         when {
             name.isBlank() -> throw ValidationExceptions.NameValidationException.EmptyNameException()
-            name.length < CONSTANTS.MIN_NAME_LENGTH -> throw ValidationExceptions.NameValidationException.InvalidNameFormatException()
+            !Utils.isValidName(name) -> throw ValidationExceptions.NameValidationException.InvalidNameFormatException()
 
             email.isBlank() -> throw ValidationExceptions.EmailValidationException.EmptyEmailException()
-            !Patterns.EMAIL_ADDRESS.matcher(email)
-                .matches() -> throw ValidationExceptions.EmailValidationException.InvalidEmailFormatException()
+            !Utils.isValidEmail(email)
+                 -> throw ValidationExceptions.EmailValidationException.InvalidEmailFormatException()
 
             phone.isBlank() -> throw ValidationExceptions.PhoneValidationException.EmptyPhoneException()
-            !phone.matches(Regex("^01[0-2,5][0-9]{8}$")) -> throw ValidationExceptions.PhoneValidationException.InvalidPhoneFormatException()
+            !Utils.isValidPhone(phone)-> throw ValidationExceptions.PhoneValidationException.InvalidPhoneFormatException()
 
             password.isBlank() -> throw ValidationExceptions.PasswordValidationException.EmptyPasswordException()
-            password.length < CONSTANTS.MIN_PASSWORD_LENGTH -> throw ValidationExceptions.PasswordValidationException.ShortPasswordException()
-            !password.any { it.isDigit() } || !password.any { it.isLetter() } -> throw ValidationExceptions.PasswordValidationException.InvalidPasswordException()
+            !Utils.isPasswordNotShort(password) -> throw ValidationExceptions.PasswordValidationException.ShortPasswordException()
+            !Utils.doesPasswordContainLettersAndNumbers(password) -> throw ValidationExceptions.PasswordValidationException.InvalidPasswordException()
 
             password != confirmPassword -> throw ValidationExceptions.ConfirmPasswordValidationException()
         }

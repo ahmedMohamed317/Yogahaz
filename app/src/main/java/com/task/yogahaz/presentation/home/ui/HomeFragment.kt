@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.task.yogahaz.R
-import com.task.yogahaz.base.BaseFragment
+import com.task.yogahaz.utils.base.BaseFragment
 import com.task.yogahaz.databinding.FragmentHomeBinding
 import com.task.yogahaz.domain.models.home.AddToFavoriteBody
 import com.task.yogahaz.domain.models.home.CategoryData
@@ -44,27 +44,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun initClicks() {
         binding.toolbar.backBtn.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().popBackStack()
         }
     }
 
-    override fun initViewModel() {
+
+
+    override fun onCreateInit() {
+        initSetAdapter()
+        initToolBar()
+        setupViews()
         observeTrendingSellers()
         observeCategories()
         observePopularSellers()
     }
 
-    override fun onCreateInit() {
-        setupViews()
-    }
-
-    override fun initSetAdapter() {
+    private fun initSetAdapter() {
         binding.rvCategories.adapter = categoriesAdapter
         binding.rvPopular.adapter = popularSellersAdapter
         binding.rvTrending.adapter = trendingSellersAdapter
     }
 
-    override fun initToolBar() {
+    private fun initToolBar() {
         binding.toolbar.tvTitle.text = resources.getString(R.string.home)
     }
 
@@ -94,7 +95,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 }
                 state.error.isNotEmpty() -> {
                     dismissProgressBar()
-                    showSnackBar(state.error)
+                    showToast(state.error)
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
@@ -109,7 +110,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     updateTrendingSellers(state.trendingResponse.data)
                 }
                 state.error.isNotEmpty() -> {
-                    showSnackBar(state.error)
+                    showToast(state.error)
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
@@ -123,7 +124,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     updatePopularSellers(state.popularResponse.data)
                 }
                 state.error.isNotEmpty() -> {
-                    showSnackBar(state.error)
+                    showToast(state.error)
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
@@ -143,7 +144,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 }
                 state.error.isNotEmpty() -> {
                     dismissProgressBar()
-                    showSnackBar(state.error)
+                    showToast(state.error)
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
@@ -151,5 +152,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun setupViews(){
         binding.userNameTv.text = args.userName
         binding.addressTv.text = args.userAddress
+
     }
 }

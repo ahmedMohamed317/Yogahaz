@@ -4,7 +4,7 @@ import CategoriesResponseDto
 import com.task.yogahaz.data.dto.home.response.PopularSellersResponseDto
 import com.task.yogahaz.domain.models.home.AddToFavoriteBody
 import com.task.yogahaz.domain.models.home.AddToFavoriteResponse
-import com.task.yogahaz.utils.APIS
+import com.task.yogahaz.utils.constants.APIS
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

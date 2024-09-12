@@ -3,7 +3,7 @@ package com.task.yogahaz.domain.usecases.login
 import com.task.yogahaz.data.dto.login.request.LoginBody
 import com.task.yogahaz.domain.models.auth.LoginResponse
 import com.task.yogahaz.domain.repository.login.LoginRepository
-import com.task.yogahaz.utils.Result
+import com.task.yogahaz.utils.network.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

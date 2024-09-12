@@ -23,6 +23,7 @@
     <dimen name="font_size_24">24sp</dimen>
     <dimen name="font_size_26">26sp</dimen>
     <dimen name="font_size_32">32sp</dimen>
+    <dimen name="font_size_34">34sp</dimen>
 
     // For padding and margin
     <dimen name="paddingAndMargin_18_negative">-18dp</dimen>
@@ -33,20 +34,29 @@
     <dimen name="paddingAndMargin_8">8dp</dimen>
     <dimen name="paddingAndMargin_12">12dp</dimen>
     <dimen name="paddingAndMargin_16">16dp</dimen>
+    <dimen name="paddingAndMargin_18">18dp</dimen>
     <dimen name="paddingAndMargin_20">20dp</dimen>
+    <dimen name="paddingAndMargin_21">21dp</dimen>
     <dimen name="paddingAndMargin_24">24dp</dimen>
     <dimen name="paddingAndMargin_32">32dp</dimen>
+    <dimen name="paddingAndMargin_34">34dp</dimen>
     <dimen name="paddingAndMargin_38">38dp</dimen>
     <dimen name="paddingAndMargin_40">40dp</dimen>
     <dimen name="paddingAndMargin_42">42dp</dimen>
     <dimen name="paddingAndMargin_48">48dp</dimen>
+    <dimen name="paddingAndMargin_51">51dp</dimen>
     <dimen name="paddingAndMargin_56">56dp</dimen>
     <dimen name="paddingAndMargin_64">64dp</dimen>
     <dimen name="paddingAndMargin_72">72dp</dimen>
     <dimen name="paddingAndMargin_80">80dp</dimen>
     <dimen name="paddingAndMargin_84">84dp</dimen>
     <dimen name="paddingAndMargin_88">88dp</dimen>
+    <dimen name="paddingAndMargin_114">114dp</dimen>
     <dimen name="paddingAndMargin_128">128dp</dimen>
+    <dimen name="paddingAndMargin_136">136dp</dimen>
+    <dimen name="paddingAndMargin_108">108dp</dimen>
+    <dimen name="paddingAndMargin_148">148dp</dimen>
+    <dimen name="paddingAndMargin_305">305dp</dimen>
 
     // For elevation
     <dimen name="elevate_2">2dp</dimen>
@@ -67,8 +77,16 @@
     <dimen name="dimen_88">88dp</dimen>
     <dimen name="dimen_84">84dp</dimen>
     <dimen name="dimen_100">100dp</dimen>
+    <dimen name="dimen_108">108dp</dimen>
+    <dimen name="dimen_109">109dp</dimen>
+    <dimen name="dimen_114">114dp</dimen>
+    <dimen name="dimen_136">136dp</dimen>
+    <dimen name="dimen_148">148dp</dimen>
     <dimen name="dimen_150">150dp</dimen>
     <dimen name="dimen_152">152dp</dimen>
+    <dimen name="dimen_188">188dp</dimen>
+    <dimen name="dimen_162">162dp</dimen>
+
     <dimen name="dimen_120">120dp</dimen>
     <dimen name="dimen_232">232dp</dimen>
     <dimen name="dimen_166">166dp</dimen>

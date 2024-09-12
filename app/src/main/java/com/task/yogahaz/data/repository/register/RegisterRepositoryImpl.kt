@@ -1,6 +1,7 @@
 package com.task.yogahaz.data.repository.register
 
 import RegisterResponseDto
+import android.util.Log
 import com.task.yogahaz.data.dto.register.request.RegisterBody
 import com.task.yogahaz.data.remote.AuthApi
 import com.task.yogahaz.domain.repository.register.RegisterRepository

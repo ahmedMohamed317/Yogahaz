@@ -1,4 +1,4 @@
-package com.task.yogahaz.utils
+package com.task.yogahaz.utils.validation
 
 sealed class ValidationExceptions(message: String) : Exception(message) {
 

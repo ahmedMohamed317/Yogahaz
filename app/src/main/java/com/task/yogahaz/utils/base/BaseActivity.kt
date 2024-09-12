@@ -1,4 +1,4 @@
-package com.task.yogahaz.base
+package com.task.yogahaz.utils.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,10 +18,8 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
         _binding = getViewBinding(layoutInflater)
         setContentView(_binding?.root)
         onCreateInit()
-        initClicks()
     }
-    //abstract method for clicking events
-    protected abstract fun initClicks()
+
     //abstract method for init
     protected abstract fun onCreateInit()
 

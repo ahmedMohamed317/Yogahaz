@@ -6,14 +6,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.task.yogahaz.R
-import com.task.yogahaz.base.BaseFragment
 import com.task.yogahaz.data.dto.login.request.LoginBody
 import com.task.yogahaz.databinding.FragmentLoginBinding
 import com.task.yogahaz.presentation.login.viewmodel.LoginViewModel
-import com.task.yogahaz.utils.UserData
-import com.task.yogahaz.utils.ValidationExceptions
+import com.task.yogahaz.utils.constants.UserData
+import com.task.yogahaz.utils.Utils.clearErrorOnTextChanged
+import com.task.yogahaz.utils.validation.ValidationExceptions
+import com.task.yogahaz.utils.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+
+
 @AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
@@ -27,65 +30,32 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun initClicks() {
         binding.loginBtn.setOnClickListener {
             clearInputErrors()
+            observeLogin()
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-
             val loginBody = LoginBody(email, password)
             try {
                 viewModel.login(loginBody)
             }
-            catch (e:ValidationExceptions){
+            catch (e: ValidationExceptions){
                 handleValidationException(e)
             }
         }
 
-        binding.tvSignUp.setOnClickListener {
+        binding.signupLayout.setOnClickListener {
             navigateToRegisterFragment()
         }
 
-        binding.forogotPasswordTv.setOnClickListener {
-
-        }
     }
 
-    override fun initViewModel() {
-        viewLifecycleOwner.lifecycleScope.launch {
-                viewModel.state.collect { state ->
-                    if (state.isLoading) {
-                        showProgressBar()
-                    }
-                    else {
-                        dismissProgressBar()
-                    }
 
-                    state.loginResponse?.let {
-                        UserData.TOKEN = it.data?.token?:""
-                        showSnackBar(state.loginResponse.message)
-                        navigateToIHomeFragment(state.loginResponse.data?.name,
-                            state.loginResponse.data?.addresses?.get(0)?.address ?: context?.getString(R.string.no_address_added )?:""
-                        )
-                    }
-
-                    state.error.let {
-                        if (state.error.isNotBlank()) {
-                            showSnackBar(it)
-                        }
-                    }
-                }
-        }
-    }
 
     override fun onCreateInit() {
-        // Initialization code, if needed
+        setUpClearWatchers()
+
     }
 
-    override fun initSetAdapter() {
-        // Set up adapters, if needed
-    }
 
-    override fun initToolBar() {
-        // Initialize the toolbar, if needed
-    }
 
     private fun handleValidationException(exception: ValidationExceptions) {
         when (exception) {
@@ -95,7 +65,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             is ValidationExceptions.PasswordValidationException -> {
                 binding.passwordInputLayout.error = exception.message
             }
-            else ->  showSnackBar(exception.message)
+            else ->  showToast(exception.message)
 
         }
     }
@@ -117,6 +87,40 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         if (checkCurrentDestination(R.id.loginFragment)) {
             val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(userName,userAddress)
             findNavController().navigate(action)
+
+        }
+    }
+    private fun setUpClearWatchers(){ // clearing input layout if empty
+        binding.emailInputLayout.clearErrorOnTextChanged()
+        binding.passwordInputLayout.clearErrorOnTextChanged()
+    }
+
+    private fun observeLogin() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.state.collect { state ->
+                if (state.isLoading) {
+                    showProgressBar()
+                }
+                else {
+                    dismissProgressBar()
+                }
+
+                state.loginResponse?.let {
+                    UserData.TOKEN = it.data?.token?:""
+                    showToast(state.loginResponse.message)
+                    val address = it.data?.addresses?.firstOrNull()?.address
+                        ?: context?.getString(R.string.no_address_added)
+                    navigateToIHomeFragment(state.loginResponse.data?.name,
+                        address?:""
+                    )
+                }
+
+                state.error.let {
+                    if (state.error.isNotBlank()) {
+                        showToast(it)
+                    }
+                }
+            }
         }
     }
 }

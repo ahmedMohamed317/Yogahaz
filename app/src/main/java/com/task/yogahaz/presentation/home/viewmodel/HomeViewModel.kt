@@ -12,7 +12,7 @@ import com.task.yogahaz.presentation.home.state.AddToFavoriteState
 import com.task.yogahaz.presentation.home.state.CategoriesState
 import com.task.yogahaz.presentation.home.state.PopularState
 import com.task.yogahaz.presentation.home.state.TrendingState
-import com.task.yogahaz.utils.Result
+import com.task.yogahaz.utils.network.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -48,7 +48,7 @@ class HomeViewModel @Inject constructor(
         getPopularSellers()
     }
 
-    private fun getCategories() {
+    fun getCategories() {
         try {
             getCategoriesUseCase().onEach { result ->
                 when (result) {
@@ -71,7 +71,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun getTrendingSellers() {
+    fun getTrendingSellers() {
         try {
             getTrendingUseCase().onEach { result ->
                 when (result) {
@@ -94,7 +94,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun getPopularSellers() {
+    fun getPopularSellers() {
         try {
             getPopularSellerUseCase().onEach { result ->
                 when (result) {

@@ -3,7 +3,6 @@ package com.task.yogahaz.utils.network
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
-import com.task.yogahaz.utils.network.ConnectivityObserver
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow

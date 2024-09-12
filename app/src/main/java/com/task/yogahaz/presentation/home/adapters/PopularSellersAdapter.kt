@@ -6,8 +6,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.task.yogahaz.R
-import com.task.yogahaz.base.BaseViewHolder
-import com.task.yogahaz.base.DiffCallback
+import com.task.yogahaz.utils.base.BaseViewHolder
+import com.task.yogahaz.utils.base.DiffCallback
 import com.task.yogahaz.databinding.ItemPopularNowHomeBinding
 import com.task.yogahaz.domain.models.home.AddToFavoriteBody
 import com.task.yogahaz.domain.models.home.Restaurant
@@ -55,7 +55,7 @@ class PopularSellersAdapter(
                     19)
             binding.productNameTv.text = item.name
             binding.ratingBar.rating = item.rate?.toFloat() ?: 0f
-            binding.distanceTv.text = item.distance ?: "Un known"
+            binding.distanceTv.text = item.distance ?: binding.root.context.getString(R.string.unknown)
             binding.favoriteIv.setOnClickListener {
                 addToFavorite(AddToFavoriteBody(item.id?:0),binding.favoriteIv)
             }

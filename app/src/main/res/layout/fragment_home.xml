@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
-    android:splitMotionEvents="false"
-    >
+    android:orientation="vertical">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="@dimen/paddingAndMargin_24"/>
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:splitMotionEvents="false"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+
+        >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:elevation="@dimen/paddingAndMargin_24"/>
+
 
         <TextView
             android:id="@+id/user_name_tv"
@@ -29,9 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingAndMargin_24"
             android:fontFamily="@font/tt_commons_bold"
-            android:textSize="34sp"
+            android:textSize="@dimen/font_size_34"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Hello Ahmed" />
 
         <TextView
@@ -53,9 +60,9 @@
             style="@style/TextInputLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_16"
+            android:layout_marginTop="@dimen/paddingAndMargin_8"
+            android:layout_marginEnd="@dimen/paddingAndMargin_4"
             android:hint="@string/search_for_fav_food"
             app:layout_constraintEnd_toStartOf="@+id/search_btn"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +77,7 @@
                 android:cursorVisible="true"
                 android:inputType="text"
                 android:lines="1"
-                android:paddingStart="18dp"
+                android:paddingStart="@dimen/paddingAndMargin_18"
                 android:paddingEnd="@dimen/paddingAndMargin_4"
                 android:scrollHorizontally="true"
                 android:singleLine="true" />
@@ -80,7 +87,7 @@
             android:id="@+id/filter_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/paddingAndMargin_16"
             android:contentDescription="@string/app_name"
             android:elevation="@dimen/elevate_4"
             android:padding="@dimen/paddingAndMargin_8"
@@ -93,8 +100,8 @@
             android:id="@+id/search_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="@dimen/paddingAndMargin_4"
+            android:layout_marginEnd="@dimen/paddingAndMargin_8"
             android:contentDescription="@string/app_name"
             android:elevation="@dimen/elevate_4"
             android:src="@drawable/search_icon"
@@ -121,7 +128,7 @@
             style="@style/Body1.Style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_34"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/tt_commons_regular"
             android:gravity="center"
@@ -136,7 +143,7 @@
             android:id="@+id/rv_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_16"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
@@ -168,8 +175,8 @@
             style="@style/Body1.Style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_34"
+            android:layout_marginTop="@dimen/paddingAndMargin_24"
             android:gravity="center"
             android:text="@string/popular_now"
             android:textColor="@color/gray_100"
@@ -183,7 +190,7 @@
             android:id="@+id/rv_popular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_16"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
@@ -212,8 +219,8 @@
             style="@style/Body1.Style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_34"
+            android:layout_marginTop="@dimen/paddingAndMargin_24"
             android:gravity="center"
             android:text="@string/trending_now"
             android:textColor="@color/gray_100"
@@ -227,8 +234,8 @@
             android:id="@+id/rv_trending"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/paddingAndMargin_16"
+            android:layout_marginBottom="@dimen/paddingAndMargin_16"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -239,3 +246,4 @@
             tools:listitem="@layout/item_trending_home" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+</LinearLayout>

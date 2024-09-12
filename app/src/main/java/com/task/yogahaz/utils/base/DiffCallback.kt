@@ -1,4 +1,4 @@
-package com.task.yogahaz.base
+package com.task.yogahaz.utils.base
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil

@@ -33,5 +33,6 @@
     <string name="registration_successful">Registration successful!</string>
     <string name="no_address_added">No Address Added</string>
     <string name="trending_now">Trending now.</string>
+    <string name="unknown">Unknown</string>
 
 </resources>

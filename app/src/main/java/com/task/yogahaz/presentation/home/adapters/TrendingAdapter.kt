@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.task.yogahaz.R
-import com.task.yogahaz.base.BaseViewHolder
-import com.task.yogahaz.base.DiffCallback
+import com.task.yogahaz.utils.base.BaseViewHolder
+import com.task.yogahaz.utils.base.DiffCallback
 import com.task.yogahaz.databinding.ItemTrendingHomeBinding
 import com.task.yogahaz.domain.models.home.Restaurant
 import com.task.yogahaz.utils.Utils

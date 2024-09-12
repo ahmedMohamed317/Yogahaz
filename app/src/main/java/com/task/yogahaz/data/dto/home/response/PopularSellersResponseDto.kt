@@ -18,29 +18,30 @@ data class PopularSellersResponseDto(
 
 @Parcelize
 data class RestaurantDto(
-    @SerializedName("id") val id: Int?,
-    @SerializedName("name") val name: String?,
-    @SerializedName("email") val email: String?,
-    @SerializedName("phone") val phone: String?,
-    @SerializedName("image") val image: String?,
-    @SerializedName("logo") val logo: String?,
-    @SerializedName("description") val description: String?,
-    @SerializedName("distance") val distance: String?,
-    @SerializedName("type") val type: Int?,
-    @SerializedName("status") val status: Int?,
-    @SerializedName("lat") val lat: String?,
-    @SerializedName("lng") val lng: String?,
-    @SerializedName("address") val address: String?,
-    @SerializedName("appointments") val appointments: String?,
-    @SerializedName("trending") val trending: Int?,
-    @SerializedName("popular") val popular: Int?,
-    @SerializedName("rate") val rate: String?,
-    @SerializedName("is_favorite") val isFavorite: Boolean?,
-    @SerializedName("categories") val categories: List<CategoryDto>?,
-    @SerializedName("token") val token: String?,
-    @SerializedName("information") val information: InformationDto?,
-    @SerializedName("product_categories") val productCategories: List<ProductCategoryDto>?
+    @SerializedName("id") val id: Int? = null,
+    @SerializedName("name") val name: String? = null,
+    @SerializedName("email") val email: String? = null,
+    @SerializedName("phone") val phone: String? = null,
+    @SerializedName("image") val image: String? = null,
+    @SerializedName("logo") val logo: String? = null,
+    @SerializedName("description") val description: String? = null,
+    @SerializedName("distance") val distance: String? = null,
+    @SerializedName("type") val type: Int? = null,
+    @SerializedName("status") val status: Int? = null,
+    @SerializedName("lat") val lat: String? = null,
+    @SerializedName("lng") val lng: String? = null,
+    @SerializedName("address") val address: String? = null,
+    @SerializedName("appointments") val appointments: String? = null,
+    @SerializedName("trending") val trending: Int? = null,
+    @SerializedName("popular") val popular: Int? = null,
+    @SerializedName("rate") val rate: String? = null,
+    @SerializedName("is_favorite") val isFavorite: Boolean? = null,
+    @SerializedName("categories") val categories: List<CategoryDto>? = null,
+    @SerializedName("token") val token: String? = null,
+    @SerializedName("information") val information: InformationDto? = null,
+    @SerializedName("product_categories") val productCategories: List<ProductCategoryDto>? = null
 ) : Parcelable
+
 
 @Parcelize
 data class CategoryDto(

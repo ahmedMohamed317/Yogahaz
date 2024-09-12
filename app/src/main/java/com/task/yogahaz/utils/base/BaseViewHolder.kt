@@ -1,4 +1,4 @@
-package com.task.yogahaz.base
+package com.task.yogahaz.utils.base
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding

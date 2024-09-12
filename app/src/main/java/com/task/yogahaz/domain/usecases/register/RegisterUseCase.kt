@@ -1,9 +1,10 @@
 package com.task.yogahaz.domain.usecases.register
 
+import android.util.Log
 import com.task.yogahaz.data.dto.register.request.RegisterBody
 import com.task.yogahaz.domain.models.auth.RegisterResponse
 import com.task.yogahaz.domain.repository.register.RegisterRepository
-import com.task.yogahaz.utils.Result
+import com.task.yogahaz.utils.network.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

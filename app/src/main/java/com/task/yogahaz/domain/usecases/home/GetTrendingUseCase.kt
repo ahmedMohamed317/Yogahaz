@@ -4,7 +4,7 @@ package com.task.yogahaz.domain.usecases.home
 import com.task.yogahaz.data.dto.home.response.toPopularSellersResponse
 import com.task.yogahaz.domain.models.home.PopularSellersResponse
 import com.task.yogahaz.domain.repository.home.HomeRepository
-import com.task.yogahaz.utils.Result
+import com.task.yogahaz.utils.network.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

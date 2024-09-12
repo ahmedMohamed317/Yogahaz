@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Yogahaz</string>
+    <string name="no_network_connectivity">No Connection</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="try_again">Try Again</string>
+    <string name="please_check_your_internet_connection_and_n_try_again">Please check your internet connection and try again</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="name">Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="next">Next</string>
+    <string name="home">Home</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_up_cap">SIGN UP</string>
+    <string name="name_">Name.</string>
+    <string name="write_14_character">Write 14 character</string>
+    <string name="have_an_account">have an account ?</string>
+    <string name="dont_have_an_account">Don\'t have an account ?</string>
+    <string name="log_in">Log in</string>
+    <string name="email">Email.</string>
+    <string name="phone_number">Phone Number.</string>
+    <string name="log_in_cap">LOG IN</string>
+    <string name="forgot_the_password">Forgot the password ?</string>
+    <string name="search_for_fav_food">Search for fav food ...</string>
+    <string name="view_all">View all</string>
+    <string name="categories">Categories.</string>
+    <string name="popular_now">Popular now.</string>
+    <string name="write_your_email">Write your email</string>
+    <string name="write_11_numbers">Write 11 numbers</string>
+    <string name="write_8_character_at_least">Write 8 character at least</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="write_your_password_again">Write your password again</string>
+    <string name="registration_successful">Registration successful!</string>
+    <string name="no_address_added">No Address Added</string>
+    <string name="trending_now">Trending now.</string>
+
+</resources>

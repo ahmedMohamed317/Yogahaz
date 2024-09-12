@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_100">#1C2A57</color>
+    <color name="primary_80">#606A89</color>
+    <color name="primary_60">#8D94AB</color>
+    <color name="primary_40">#BBBFCD</color>
+    <color name="secondary_100">#FF9900</color>
+    <color name="secondary_80">#FFB84D</color>
+    <color name="secondary_60">#FFCC80</color>
+    <color name="secondary_40">#FFE5BF</color>
+    <color name="gray_100">#484848</color>
+    <color name="gray_80">#B3B3B3</color>
+    <color name="gray_60">#C4C4C4</color>
+    <color name="gray_70">#9C9C9C</color>
+    <color name="gray_40">#DCDCDC</color>
+    <color name="black">#0B0B0B</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="semi_white">#FEFEFE</color>
+    <color name="error">#FE2E00</color>
+    <color name="success">#3DBD00</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="dark_blue">#262B3E</color>
+    <color name="base">#F5F5F5</color>
+    <color name="normal_grey">#585858</color>
+    <color name="yellow_star">#ecc440</color>
+    <color name="btn_color">#00957B</color>
+    <color name="tv_color">#ecc440</color>
+    <color name="brown">#ba935c</color>
+    <color name="yellow">#ffd279</color>
+    <color name="blackTransparent">#80000000</color>
+    <color name="gold">#FCEFCE</color>
+
+
+
+</resources>

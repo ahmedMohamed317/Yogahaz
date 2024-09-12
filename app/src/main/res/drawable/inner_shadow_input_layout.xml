@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base background color -->
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+            <corners android:radius="@dimen/radius_8"/>
+            <stroke android:color="#eeeeee" android:width="0.5dp"/>
+        </shape>
+
+    </item>
+
+    <!-- Gradient for the top side (from grey to white) -->
+    <item android:top="0dp" android:height="18dp">
+        <shape android:shape="rectangle">
+            <corners android:topRightRadius="@dimen/radius_8" android:topLeftRadius="@dimen/radius_8"/>
+            <gradient
+                android:startColor="#eeeeee"
+                android:endColor="@android:color/white"
+                android:angle="270" />
+        </shape>
+    </item>
+
+    <!-- Gradient for the left side (from grey to white) -->
+    <item android:left="0dp" android:width="18dp">
+        <shape android:shape="rectangle">
+            <corners android:bottomLeftRadius="@dimen/radius_8" android:topLeftRadius="@dimen/radius_8"/>
+            <gradient
+                android:startColor="#eeeeee"
+                android:endColor="@android:color/white"
+                android:angle="0"
+                android:centerX="20"/>
+        </shape>
+    </item>
+    <item android:start="0dp" android:top="0dp" android:width="18dp" android:height="16dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#eeeeee" />
+            <corners android:topLeftRadius="@dimen/radius_8" />
+            <gradient
+                android:startColor="#eeeeee"
+                android:centerColor="#eeeeee"
+                android:endColor="@android:color/white"
+                android:angle="315" />
+        </shape>
+    </item>
+</layer-list>

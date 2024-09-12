@@ -1,0 +1,50 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="136dp"
+    android:layout_height="114dp"
+    android:layout_marginLeft="@dimen/paddingAndMargin_6"
+    android:layout_marginTop="@dimen/paddingAndMargin_8"
+    android:layout_marginRight="@dimen/paddingAndMargin_6"
+    android:layout_marginBottom="@dimen/paddingAndMargin_4"
+    android:elevation="@dimen/elevate_2"
+    android:background="@drawable/background_8dp_round_corners_white">
+
+
+    <TextView
+        android:id="@+id/product_name_tv"
+        style="@style/Body1.Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="@dimen/paddingAndMargin_8"
+        android:fontFamily="@font/tt_commons_regular"
+        android:gravity="center"
+        android:text="@string/categories"
+        android:textColor="@color/gray_100"
+        android:textSize="@dimen/font_size_12"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/product_image_iv"
+        tools:text="Product Name" />
+
+    <ImageView
+        android:id="@+id/product_image_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/paddingAndMargin_8"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/paddingAndMargin_8"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/background_8dp_round_corners_white"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/product_placeholder"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

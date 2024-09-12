@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // For radius
+    <dimen name="radius_3">3dp</dimen>
+    <dimen name="radius_4">4dp</dimen>
+    <dimen name="radius_8">8dp</dimen>
+    <dimen name="radius_12">12dp</dimen>
+    <dimen name="radius_16">16dp</dimen>
+    <dimen name="radius_19">19dp</dimen>
+    <dimen name="radius_24">24dp</dimen>
+    <dimen name="radius_40">40dp</dimen>
+
+    // For text size
+    <dimen name="font_size_8">8sp</dimen>
+    <dimen name="font_size_10">10sp</dimen>
+    <dimen name="font_size_12">12sp</dimen>
+    <dimen name="font_size_14">14sp</dimen>
+    <dimen name="font_size_16">16sp</dimen>
+    <dimen name="font_size_18">18sp</dimen>
+    <dimen name="font_size_20">20sp</dimen>
+    <dimen name="font_size_22">22sp</dimen>
+    <dimen name="font_size_24">24sp</dimen>
+    <dimen name="font_size_26">26sp</dimen>
+    <dimen name="font_size_32">32sp</dimen>
+
+    // For padding and margin
+    <dimen name="paddingAndMargin_18_negative">-18dp</dimen>
+    <dimen name="paddingAndMargin_8_negative">-8dp</dimen>
+    <dimen name="paddingAndMargin_2">2dp</dimen>
+    <dimen name="paddingAndMargin_4">4dp</dimen>
+    <dimen name="paddingAndMargin_6">6dp</dimen>
+    <dimen name="paddingAndMargin_8">8dp</dimen>
+    <dimen name="paddingAndMargin_12">12dp</dimen>
+    <dimen name="paddingAndMargin_16">16dp</dimen>
+    <dimen name="paddingAndMargin_20">20dp</dimen>
+    <dimen name="paddingAndMargin_24">24dp</dimen>
+    <dimen name="paddingAndMargin_32">32dp</dimen>
+    <dimen name="paddingAndMargin_38">38dp</dimen>
+    <dimen name="paddingAndMargin_40">40dp</dimen>
+    <dimen name="paddingAndMargin_42">42dp</dimen>
+    <dimen name="paddingAndMargin_48">48dp</dimen>
+    <dimen name="paddingAndMargin_56">56dp</dimen>
+    <dimen name="paddingAndMargin_64">64dp</dimen>
+    <dimen name="paddingAndMargin_72">72dp</dimen>
+    <dimen name="paddingAndMargin_80">80dp</dimen>
+    <dimen name="paddingAndMargin_84">84dp</dimen>
+    <dimen name="paddingAndMargin_88">88dp</dimen>
+    <dimen name="paddingAndMargin_128">128dp</dimen>
+
+    // For elevation
+    <dimen name="elevate_2">2dp</dimen>
+    <dimen name="elevate_4">4dp</dimen>
+
+    //For dimensions
+    <dimen name="dimen_2">2dp</dimen>
+    <dimen name="dimen_319">319dp</dimen>
+    <dimen name="dimen_335">335dp</dimen>
+    <dimen name="dimen_30">30dp</dimen>
+    <dimen name="dimen_36">36dp</dimen>
+    <dimen name="dimen_37">37dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+    <dimen name="dimen_48">48dp</dimen>
+    <dimen name="dimen_52">52dp</dimen>
+    <dimen name="dimen_64">64dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
+    <dimen name="dimen_88">88dp</dimen>
+    <dimen name="dimen_84">84dp</dimen>
+    <dimen name="dimen_100">100dp</dimen>
+    <dimen name="dimen_150">150dp</dimen>
+    <dimen name="dimen_152">152dp</dimen>
+    <dimen name="dimen_120">120dp</dimen>
+    <dimen name="dimen_232">232dp</dimen>
+    <dimen name="dimen_166">166dp</dimen>
+
+</resources>

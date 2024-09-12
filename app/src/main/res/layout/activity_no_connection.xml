@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/im_mask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingAndMargin_42"
+            android:layout_marginTop="@dimen/paddingAndMargin_84"
+            android:layout_marginEnd="@dimen/paddingAndMargin_42"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY"
+            android:src="@drawable/no_internet_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_no_internet_connection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingAndMargin_32"
+            android:layout_marginTop="@dimen/paddingAndMargin_88"
+            android:layout_marginEnd="@dimen/paddingAndMargin_32"
+            android:fontFamily="@font/tt_commons_bold"
+            android:gravity="center"
+            android:padding="@dimen/paddingAndMargin_4"
+            android:text="@string/no_network_connectivity"
+            android:textColor="@color/primary_100"
+            android:textSize="@dimen/font_size_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/im_mask" />
+
+
+        <TextView
+            android:id="@+id/txt_pls_check_again"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingAndMargin_32"
+            android:layout_marginTop="@dimen/paddingAndMargin_24"
+            android:layout_marginEnd="@dimen/paddingAndMargin_32"
+            android:fontFamily="@font/tt_commons_medium"
+            android:gravity="center"
+            android:padding="@dimen/paddingAndMargin_4"
+            android:text="@string/please_check_your_internet_connection_and_n_try_again"
+            android:textColor="@color/primary_80"
+            android:textSize="@dimen/font_size_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_no_internet_connection" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_retry"
+            style="@style/MaterialButtonStyle"
+            android:layout_width="@dimen/dimen_319"
+            android:layout_height="@dimen/dimen_37"
+            android:layout_marginTop="@dimen/paddingAndMargin_8"
+            android:backgroundTint="@color/primary_100"
+            android:text="@string/try_again"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_16"
+            android:fontFamily="@font/tt_commons_bold"
+            app:cornerRadius="@dimen/radius_40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/txt_pls_check_again"
+            app:layout_constraintStart_toStartOf="@+id/txt_pls_check_again"
+            app:layout_constraintTop_toBottomOf="@+id/txt_pls_check_again" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
